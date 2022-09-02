@@ -1,9 +1,24 @@
-<h1>
-  {{titulo}}
-</h1>
+<app-titulo [titulo]="titulo"></app-titulo>
 
-<ul>
-  <li *ngFor="let aluno of alunos">
-    {{aluno.nome}}
-  </li>
-</ul>
+<table class="table caption-top">
+  <caption>Lista de alunos</caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Sobrenome</th>
+      <th scope="col">Fone</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let aluno of alunos">
+      <th scope="row">{{aluno.id}}</th>
+      <th>{{aluno.nome}}</th>
+      <td>{{aluno.sobrenome}}</td>
+      <td>{{aluno.telefone}}</td>
+
+    </tr>
+  </tbody>
+</table>
+
